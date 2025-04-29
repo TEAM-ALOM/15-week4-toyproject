@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class LikeController {
   private final LikeService likeService;
-
+  private final LikeRepository repository;
   @GetMapping("/api/board/{boardId}/likes")
   public ResponseEntity<List<LikesResponse>> getBoardLikeCount(@PathVariable Long boardId) {
     return ResponseEntity.ok(likeService.getBoardLikes(boardId));
